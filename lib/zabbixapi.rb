@@ -7,6 +7,7 @@ require "zabbixapi/basic/basic_init"
 require "zabbixapi/basic/basic_logic"
 
 require "zabbixapi/classes/applications"
+require "zabbixapi/classes/configuration"
 require "zabbixapi/classes/errors"
 require "zabbixapi/classes/graphs"
 require "zabbixapi/classes/hostgroups"
@@ -64,6 +65,10 @@ class ZabbixApi
 
   def applications
     @applications ||= Applications.new(@client)
+  end
+
+  def configuration
+    @configuration ||= Configuration.new(@client)
   end
 
   def templates
